@@ -17,7 +17,11 @@ SEGMENTS = {
     '6': 'ACDEFG',
     '7': 'ABC',
     '8': 'ABCDEFG',
-    '9': 'ABCDFG'
+    '9': 'ABCDFG',
+    'C': 'ADEF',
+    'd': 'BCDEG',
+    'h': 'CEFG',
+    'r': 'EG'
 }
 
 COLORS = {
@@ -30,7 +34,11 @@ COLORS = {
     '6': '#2b00ff',
     '7': '#aa00ff',
     '8': '#ff00d4',
-    '9': '#ff002b'
+    '9': '#ff002b',
+    'C': '#ffff33',
+    'd': '#00ffff',
+    'h': '#883dff',
+    'r': '#00ffff'
 }
 
 SEQUENCE = 'FABGEDC'
