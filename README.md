@@ -1,6 +1,6 @@
-# Sunrice - Garden Light Controller
+# BigSegment
 
-Sunrice is a quick and dirty Python app for controlling my garden lights. It schedules on/off sequence at sunset/dawn, whereas exact times are calculated on daily basis. MQTT messages are sent to the PLC controller as a on/off sequence. Sunrice also reacts to `sunrise/on` and `sunrise/off` MQTT messagess (with no payload) to start the sequence manually.
+Sunrice is a quick and dirty Python app for controlling LED strip and simulating LED 7-segment. It transforms MQTT input message with the letter payload to BigClown smart LED strip compound.
 
 ## Contributing
 
