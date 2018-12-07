@@ -1,6 +1,6 @@
-# BigSegment
+# Big Segment
 
-Sunrice is a quick and dirty Python app for controlling LED strip and simulating LED 7-segment. It transforms MQTT input message with the letter payload to BigClown smart LED strip compound.
+Big Segment is a quick and dirty Python app for controlling LED strip and simulating LED 7-segment. It transforms MQTT input message with the letter payload to BigClown smart LED strip compound.
 
 ## Contributing
 
@@ -8,7 +8,7 @@ Please read [**CONTRIBUTING.md**](https://github.com/hubpav/sunrice/blob/master/
 
 ## Versioning
 
-We use [**SemVer**](https://semver.org/) for versioning. For the versions available, see the [**tags on this repository**](https://github.com/hubpav/sunrice/tags).
+We use [**SemVer**](https://semver.org/) for versioning. For the versions available, see the [**tags on this repository**](https://github.com/hubpav/bigsegment/tags).
 
 ## Authors
 

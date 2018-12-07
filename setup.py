@@ -16,7 +16,7 @@ setuptools.setup(
     description=target.__doc__,
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/hubpav/sunrice',
+    url='https://github.com/hubpav/bigsegment',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
