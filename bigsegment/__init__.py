@@ -62,7 +62,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     logging.debug('Received topic: %s' % msg.topic)
-    if msg.topic in TOPICS:
+    if msg.topic == userdata['topic']:
         try:
             letter = json.loads(msg.payload.decode('utf-8'))
             if type(letter) is not str:
