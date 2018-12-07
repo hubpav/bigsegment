@@ -18,15 +18,25 @@ SEGMENTS = {
     '7': 'ABC',
     '8': 'ABCDEFG',
     '9': 'ABCDFG',
+    'A': 'ABCEFG',
+    'B': 'CDEFG',
     'C': 'ADEF',
+    'D': 'BCDEG',
+    'E': 'ADEFG',
+    'F': 'EFAG',
+    'H': 'CEFG',
+    'I': 'E',
+    'J': 'BCDE',
     'L': 'DEF',
-    'd': 'BCDEG',
-    'h': 'CEFG',
-    'i': 'E',
-    'o': 'CDEG',
-    'r': 'EG',
-    't': 'DEFG',
-    'y': 'BCDFG',
+    'N': 'CEG',
+    'O': 'CDEG',
+    'P': 'ABEFG',
+    'R': 'EG',
+    'S': 'ACDFG',
+    'T': 'DEFG',
+    'U': 'BCDEF',
+    'Y': 'BCDFG',
+    'Z': 'ABDEG',
     '-': 'G',
 }
 
@@ -41,19 +51,29 @@ COLORS = {
     '7': '#aa00ff',
     '8': '#ff00d4',
     '9': '#ff002b',
+    'A': '#ff00d4',
+    'B': '#ffff33',
     'C': '#ffff33',
+    'D': '#00ffff',
+    'E': '#883dff',
+    'F': '#2b00ff',
+    'H': '#883dff',
+    'I': '#2b00ff',
+    'J': '#aa00ff',
     'L': '#aaff00',
-    'd': '#00ffff',
-    'h': '#883dff',
-    'i': '#2b00ff',
-    'o': '#ff002b',
-    'r': '#00ffff',
-    't': '#ffaa00',
-    'y': '#ffff33',
+    'N': '#ff002b',
+    'O': '#ff002b',
+    'P': '#00ffff',
+    'R': '#00ffff',
+    'S': '#ffaa00',
+    'T': '#ffaa00',
+    'U': '#ffaa00',
+    'Y': '#ffff33',
+    'Z': '#ffff33',
     '-': '#ffffff',
 }
 
-SEQUENCE = 'FABGEDC'
+ORDER = 'FABGEDC'
 
 logging.basicConfig(format='%(asctime)s <%(levelname)s> %(message)s',
                     level=logging.DEBUG, datefmt="%Y-%m-%dT%H:%M:%S")
@@ -65,7 +85,7 @@ def transform(letter):
         return None
     segments = SEGMENTS[letter]
     compound = []
-    for segment in SEQUENCE:
+    for segment in ORDER:
         if segment in segments:
             compound.append('15, "%s"' % COLORS[letter])
         else:
