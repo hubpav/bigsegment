@@ -7,8 +7,6 @@ import paho.mqtt.client
 
 __version__ = '1.0.0'
 
-TOPICS = ['bigsegment/0/set', 'bigsegment/1/set', 'bigsegment/2/set', 'bigsegment/3/set']
-
 SEGMENTS = {
     '0': 'ABCDEF',
     '1': 'BC',
@@ -59,8 +57,7 @@ def transform(letter):
 
 def on_connect(client, userdata, flags, rc):
     logging.info('MQTT connected (code: %d)' % rc)
-    for topic in TOPICS:
-        client.subscribe(topic)
+    client.subscribe(userdata['topic'])
 
 
 def on_message(client, userdata, msg):
@@ -76,7 +73,7 @@ def on_message(client, userdata, msg):
             logging.warning('Incorrect payload')
         compound = transform(letter)
         if compound is not None:
-            client.publish('node/%s/led-strip/-/compound/set' % userdata, qos=1, payload=compound)
+            client.publish('node/%s/led-strip/-/compound/set' % userdata['id'], qos=1, payload=compound)
     else:
         logging.warning('Unknown topic')
 
@@ -84,13 +81,14 @@ def on_message(client, userdata, msg):
 @click.command()
 @click.option('--host', '-h', default='127.0.0.1', help='MQTT broker host.')
 @click.option('--port', '-p', default='1883', help='MQTT broker port.')
+@click.option('--topic', '-t', required=True, help='MQTT topic to listen to.')
 @click.option('--id', '-i', default='power-controller:0', help='Identifier of Power Controller Kit.')
 @click.version_option(version=__version__)
-def main(host, port, id):
+def main(host, port, topic, id):
     try:
         logging.info('Program started')
         mqtt = paho.mqtt.client.Client()
-        mqtt.user_data_set(id)
+        mqtt.user_data_set({'topic': topic, 'id': id})
         mqtt.on_connect = on_connect
         mqtt.on_message = on_message
         mqtt.connect(host, int(port))
