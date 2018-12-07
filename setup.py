@@ -1,6 +1,6 @@
 import pip
 import setuptools
-import sunrice as target
+import bigsegment as target
 
 with open('requirements.txt', 'r') as f:
     requirements = f.read()
