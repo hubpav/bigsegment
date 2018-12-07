@@ -22,6 +22,19 @@ SEGMENTS = {
     '9': 'ABCDFG'
 }
 
+COLORS = {
+    '0': '#ff0000',
+    '1': '#ffaa00',
+    '2': '#aaff00',
+    '3': '#00ff00',
+    '4': '#00ffaa',
+    '5': '#00aaff',
+    '6': '#2b00ff',
+    '7': '#aa00ff',
+    '8': '#ff00d4',
+    '9': '#ff002b'
+}
+
 SEQUENCE = 'FABGEDC'
 
 logging.basicConfig(format='%(asctime)s <%(levelname)s> %(message)s',
@@ -36,7 +49,7 @@ def transform(letter):
     compound = []
     for segment in SEQUENCE:
         if segment in segments:
-            compound.append('15, "#ff0000"')
+            compound.append('15, "%s"' % COLORS[letter])
         else:
             compound.append('15, "#000000"')
     compound = '[%s]' % ', '.join(compound)
