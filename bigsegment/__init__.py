@@ -19,7 +19,7 @@ SEGMENTS = {
     '6': 'ACDEFG',
     '7': 'ABC',
     '8': 'ABCDEFG',
-    '9': 'ABCFG'
+    '9': 'ABCDFG'
 }
 
 SEQUENCE = 'FABGEDC'
