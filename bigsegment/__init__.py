@@ -22,7 +22,7 @@ SEGMENTS = {
     '9': 'ABCFG'
 }
 
-SEQUENCE = 'EDCGFAB'
+SEQUENCE = 'FABGEDC'
 
 logging.basicConfig(format='%(asctime)s <%(levelname)s> %(message)s',
                     level=logging.DEBUG, datefmt="%Y-%m-%dT%H:%M:%S")
@@ -71,7 +71,7 @@ def on_message(client, userdata, msg):
 @click.command()
 @click.option('--host', '-h', default='127.0.0.1', help='MQTT broker host.')
 @click.option('--port', '-p', default='1883', help='MQTT broker port.')
-@click.option('--id', '-i', default='power-controller-kit:0', help='Identifier of Power Controller Kit.')
+@click.option('--id', '-i', default='power-controller:0', help='Identifier of Power Controller Kit.')
 @click.version_option(version=__version__)
 def main(host, port, id):
     try:
