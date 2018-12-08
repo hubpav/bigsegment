@@ -38,6 +38,7 @@ SEGMENTS = {
     'Y': 'BCDFG',
     'Z': 'ABDEG',
     '-': 'G',
+    ' ': 'G',
 }
 
 COLORS = {
@@ -71,6 +72,7 @@ COLORS = {
     'Y': '#ffff33',
     'Z': '#ffff33',
     '-': '#ffffff',
+    ' ': '#000000',
 }
 
 ORDER = 'FABGEDC'
